@@ -1,0 +1,20 @@
+server {
+	listen 80;
+	index index.html;
+	server_name freyja.andreanidr.com;
+	return 301 https://$server_name$request_uri;
+	error_log /var/log/nginx/error.log;
+	access_log /var/log/nginx/access.log;
+}
+
+server {
+	# SSL Configuration
+	listen 443 ssl http2 default_server;
+	listen [::]:443 ssl http2 default_server;
+	include snippets/ssl-freyja.andreanidr.com.conf;
+	include snippets/ssl-params.conf;
+	error_log /var/log/nginx/error.log;
+	access_log /var/log/nginx/access.log;
+	root /var/www/public;
+}
+
