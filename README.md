@@ -8,7 +8,9 @@ Docker container for a nginx webserver expecting Letsencrypt files
 `openssl dhparam -out sslcerts/dhparam.pem 2048`
 
 2. Build the docker container
+
 `docker build . -t andreani/nginx-encrypt`
 
 3. Run it with docker-compose
+
 `docker-compose up -d`
