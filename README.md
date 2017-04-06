@@ -10,5 +10,5 @@ Docker container for a nginx webserver expecting Letsencrypt files
 2. Build the docker container
 `docker build . -t andreani/nginx-encrypt`
 
-3. Run it with docker-container
+3. Run it with docker-compose
 `docker-compose up -d`
